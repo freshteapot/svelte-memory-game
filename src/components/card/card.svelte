@@ -55,6 +55,7 @@
     width: 100%;
     position: absolute;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .card .back {
