@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { copyObject } from "../lib/utils.js";
 
 let state = {};
 let timerId;
@@ -32,6 +33,7 @@ function reset(newState) {
     state.ranks = newState.ranks;
     state.userName = newState.userName;
     state.displayEnd = newState.displayEnd;
+    state.displaySettings = newState.displaySettings;
     set(state);
 }
 
@@ -83,6 +85,11 @@ function updateHighestSpeed() {
 }
 
 
+function toggleSettings(boo) {
+    state.displaySettings = boo;
+    set(state);
+}
+
 function toggleEnd(boo) {
     state.displayEnd = boo;
     set(state);
@@ -96,7 +103,6 @@ function updateUsername(name) {
 
 
 function flipCard(card) {
-    console.log(card);
     flip(card);
 }
 
@@ -113,6 +119,7 @@ export default {
     counting,
     updateHighestSpeed,
 
+    toggleSettings,
     toggleEnd,
     updateUsername,
 

@@ -7,20 +7,28 @@
   import { STATUS } from "../store/status_enum.js";
   import { shuffle } from "../lib/shuffle.js";
 
-  export let gameData = [{ name: "", img: "" }];
+  export let gameData = [];
+
+  let show = "text";
+  let settings = {
+    show: "image",
+    gameSize: gameData.length
+  };
 
   function restartGame() {
     return {
-      leftMatched: gameData.length,
+      leftMatched: settings.gameSize,
       highestSpeed: localStorage.getItem("highestSpeed") || "",
       status: STATUS.READY,
-      cards: shuffle(gameData).map(item => {
+      cards: shuffle(gameData.slice(0, settings.gameSize)).map(item => {
         item.flipped = false;
+        item.show = settings.show;
         return item;
       }),
       elapsedMs: 0,
       displayEnd: false,
       displayNameInput: false,
+      displaySettings: false,
       ranks: [],
       userName: localStorage.getItem("userName") || ""
     };
@@ -28,6 +36,11 @@
 
   function triggerRestart() {
     store.reset(restartGame());
+  }
+
+  function settingsClose(event) {
+    settings = event.detail;
+    triggerRestart();
   }
 
   triggerRestart();
@@ -61,5 +74,9 @@
     highestSpeed={$store.highestSpeed}
     on:restart={triggerRestart} />
   <Chessboard cards={$store.cards} />
-  <PlayStatus status={$store.status} elapsedMs={$store.elapsedMs} />
+  <PlayStatus
+    status={$store.status}
+    elapsedMs={$store.elapsedMs}
+    gameSettings={settings}
+    on:settingsClose={settingsClose} />
 </div>

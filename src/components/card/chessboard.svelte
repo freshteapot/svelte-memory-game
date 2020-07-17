@@ -20,10 +20,8 @@
     }
 
     if (lastCard !== card && lastCard.name === card.name) {
-      console.log("Matched");
       lastCard = null;
       store.match();
-
       return $store.leftMatched || store.updateStatus(STATUS.PASS);
     }
 

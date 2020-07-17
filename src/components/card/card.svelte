@@ -8,7 +8,8 @@
   export let option = {
     flipped: false,
     name: "",
-    img: ""
+    img: "",
+    show: "img"
   };
 
   function flip() {
@@ -23,8 +24,6 @@
     dispatch("flipped", option);
   }
 
-  console.log(key);
-  console.log(option);
   $: flipped = option.flipped ? "flipped" : "";
 </script>
 
@@ -49,7 +48,8 @@
     transform: rotateY(180deg);
   }
 
-  .card img {
+  .card img,
+  .card p {
     display: block;
     height: 100%;
     width: 100%;
@@ -58,6 +58,11 @@
     -webkit-backface-visibility: hidden;
   }
 
+  .card p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .card .back {
     background: white;
     transform: rotateY(0deg);
@@ -95,8 +100,12 @@
 
 <div class="container" on:click={flip}>
   <div class="card {flipped}">
-    <img class="front" src={option.img} />
-
+    {#if option.show == 'image'}
+      <img class="front" src={option.img} />
+    {/if}
+    {#if option.show == 'text'}
+      <p class="front">{option.name}</p>
+    {/if}
     <img class="back" src="data/back.png" />
   </div>
 </div>
