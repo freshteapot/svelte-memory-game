@@ -8,5 +8,5 @@ build-example:
 	rm -rf /tmp/svelte-memory-game
 	mv public /tmp/svelte-memory-game
 	git checkout gh-pages
-	cp /tmp/svelte-memory-game ./
+	cp /tmp/svelte-memory-game/ ./
 	git checkout master
