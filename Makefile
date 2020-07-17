@@ -5,8 +5,4 @@ run-server:
 build-example:
 	cp -r data public/
 	npm run build
-	rm -rf /tmp/svelte-memory-game
-	mv public /tmp/svelte-memory-game
-	git checkout gh-pages
-	cp /tmp/svelte-memory-game/ ./
-	git checkout master
+	git subtree push --prefix public origin gh-pages
