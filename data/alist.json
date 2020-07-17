@@ -1,0 +1,58 @@
+{
+    "info": {
+        "title": "Monty Bojangles chocolates",
+        "type": "v5"
+    },
+    "data": [
+        {
+            "name": "berry-bubbly",
+            "img": "berry-bubbly.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/berry-bubbly-1.png"
+        },
+        {
+            "name": "choccy-scoffy",
+            "img": "choccy-scoffy.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/choccy-scoffy.png"
+        },
+        {
+            "name": "cococrush",
+            "img": "cococrush.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/cococrush.png"
+        },
+        {
+            "name": "cookie-moon",
+            "img": "cookie-moon.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/cookie-moon.png"
+        },
+        {
+            "name": "flutter-scotch",
+            "img": "flutter-scotch.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/flutter-scotch.png"
+        },
+        {
+            "name": "Orange Angelical",
+            "img": "orange-angelical.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/flutter-scotch.png"
+        },
+        {
+            "name": "Pistachio Marooned",
+            "img": "pistachio-marooned.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/pistachio-marooned.png"
+        },
+        {
+            "name": "Popcorn Carousel",
+            "img": "popcorn-carousel.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/popcorn-carousel_new_correctedtop.png"
+        },
+        {
+            "name": "Ruby Fruit Sunday",
+            "img": "ruby-fruit-sunday.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/ruby-fruit-sunday.png"
+        },
+        {
+            "name": "Scrumple Nutty",
+            "img": "scrumple-nutty.png",
+            "url": "https://montybojangles.com/wp-content/uploads/2019/01/scrumple-nutty.pn"
+        }
+    ]
+}
